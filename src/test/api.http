@@ -1,0 +1,96 @@
+@host = http://localhost:3000
+@contentType = application/json
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZTIxOWZkOWU0ZWRhMTM0MDdhNGYwZSIsInVzZXJuYW1lIjoiamFja3kiLCJlbWFpbCI6ImphY2t5QHNpbS5jb20iLCJpYXQiOjE2OTI1NDk3NTYsImV4cCI6MTY5MzE1NDU1Nn0.xsGbTsjmJ7wZ_d4DjYccH0Vp5RtiRSaQWZzBtj6ix94
+
+### 注册
+POST {{host}}/users
+Content-Type: {{contentType}}
+
+{
+  "username": "cook",
+  "email": "cook@sim.com",
+  "password": "123456"
+}
+
+### 登录
+POST {{host}}/users/login
+Content-Type: {{contentType}}
+
+{
+  "email": "jacky@sim.com",
+  "password": "123456"
+}
+
+### 获取全部用户
+GET {{host}}/users
+Authorization: {{token}}
+
+### 获取用户
+GET {{host}}/users/64e21a079e4eda13407a4f10
+Authorization: {{token}}
+
+### 关注用户
+POST {{host}}/users/64e21a299e4eda13407a4f1a/follow
+Authorization: {{token}}
+
+### 取消关注用户
+DELETE {{host}}/users/64e21a079e4eda13407a4f10/follow
+Authorization: {{token}}
+
+### 获取用户关注列表
+GET {{host}}/users/64e219fd9e4eda13407a4f0e/following
+
+### 获取用户粉丝列表
+GET {{host}}/users/64e21a429e4eda13407a4f20/followers
+
+### 获取用户收藏文章列表
+GET {{host}}/users/64e21a079e4eda13407a4f10/favorites
+
+
+
+### 创建文章
+POST {{host}}/posts
+Content-Type: {{contentType}}
+Authorization: {{token}}
+
+{
+  "title": "IELTS Tips and Strategies",
+  "description": "The International English Language Testing System (IELTS) is designed to help you work",
+  "body": "The International English Language Testing System (IELTS) is designed to help you work, study or migrate to a country where English is the native language. This includes countries",
+  "tags": ["IELTS", "Strate"]
+}
+
+### 获取全部文章
+GET {{host}}/posts?q=Node
+Authorization: {{token}}
+
+### 获取文章
+GET {{host}}/posts/64e24696a8c3737a49328e62
+Authorization: {{token}}
+
+### 收藏文章
+POST {{host}}/posts/64e24696a8c3737a49328e62/favorite
+Authorization: {{token}}
+
+### 取消收藏文章
+DELETE {{host}}/posts/64e23511d8658552b450c7bc/favorite
+Authorization: {{token}}
+
+### 标签列表
+GET {{host}}/tags
+
+### 查询标签文章
+GET {{host}}/tags/Node
+
+
+
+
+
+
+
+
+
+
+
+
+

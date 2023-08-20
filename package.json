@@ -1,0 +1,32 @@
+{
+	"name": "koa-mongoose-demo-2",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "nodemon src/main.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@koa/router": "^12.0.0",
+		"dotenv": "^16.3.1",
+		"jsonwebtoken": "^9.0.1",
+		"koa": "^2.14.2",
+		"koa-bodyparser": "^4.4.1",
+		"koa-json-error": "^3.1.2",
+		"module-alias": "^2.2.3",
+		"mongoose": "^7.4.3"
+	},
+	"_moduleAliases": {
+		"@": "./src",
+		"@app": "./src/app",
+		"@router": "./src/router",
+		"@model": "./src/model",
+		"@controller": "./src/controller",
+		"@service": "./src/service",
+		"@middleware": "./src/middleware",
+		"@utils": "./src/utils"
+	}
+}
