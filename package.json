@@ -25,7 +25,6 @@
 		"@router": "./src/router",
 		"@model": "./src/model",
 		"@controller": "./src/controller",
-		"@service": "./src/service",
 		"@middleware": "./src/middleware",
 		"@utils": "./src/utils"
 	}
